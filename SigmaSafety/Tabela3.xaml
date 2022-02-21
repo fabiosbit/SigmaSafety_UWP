@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaSafety.Tabela3"
+             xmlns:local="clr-namespace:SigmaSafety">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="ISO 13857 Estrutura de Proteção" TextColor="{AppThemeBinding Light=#03A64A, Dark=LightGray}" VerticalTextAlignment="Center"/>
+            <Image Source="icoSigma.png" HorizontalOptions="EndAndExpand" HeightRequest="60" Margin="0,0,20,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ScrollView InputTransparent="False" HorizontalScrollBarVisibility="Default" VerticalScrollBarVisibility="Default">
+        <Grid HorizontalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="320"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="90"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="370"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1"/>
+            </Grid.ColumnDefinitions>
+
+            <!--<BoxView BackgroundColor="Green" Grid.RowSpan="8" Grid.Column="0"/>
+            <BoxView BackgroundColor="Blue" Grid.RowSpan="8" Grid.Column="1"/>
+            <BoxView BackgroundColor="Red" Grid.RowSpan="8" Grid.Column="2"/>-->
+
+            <Image Source="Corpo.png" Grid.Row="1" Grid.Column="2"/>
+
+            <StackLayout Grid.Row="2" Grid.Column="2" Orientation="Horizontal" HorizontalOptions="Center">
+                <RadioButton x:Name="riscoAlto" IsChecked="True" Content="Risco Alto" FontSize="Default"/>
+                <RadioButton x:Name="riscoBaixo" Content="Risco Baixo" FontSize="Default"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3" Grid.Column="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="Hh (A):" VerticalOptions="Center" FontSize="15"/>
+                <Entry Keyboard="Numeric" ReturnType="Done" x:Name="Hh" MaxLength="4" FontSize="15" WidthRequest="65" Placeholder="mm" TextChanged="TextChanged"/>
+                <Label Text="Hps (B):" VerticalOptions="Center" FontSize="15"/>
+                <Entry Keyboard="Numeric" ReturnType="Done" x:Name="Hps" MaxLength="4" FontSize="15" WidthRequest="65" Placeholder="mm" TextChanged="TextChanged"/>
+                <Label Text="Sh (C):" VerticalOptions="Center" FontSize="15"/>
+                <Entry Keyboard="Numeric" ReturnType="Done" x:Name="Sh" MaxLength="4" FontSize="15" WidthRequest="65" Placeholder="mm" TextChanged="TextChanged"/>
+            </StackLayout>
+
+            <Button x:Name="btnCalcular" Text="Calcular" Grid.Row="4" Grid.Column="2" HorizontalOptions="Center" WidthRequest="180" Margin="0,15,0,0" Clicked="btnCalcular_Clicked"/>
+
+            <StackLayout Grid.Row="5" Grid.Column="2" Orientation="Vertical">
+                <Label x:Name="labelTextoResultado" IsVisible="false" HorizontalOptions="Center" Margin="0,15,0,15">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Resultado: " TextColor="#03A64A" FontAttributes="Bold" FontSize="15"/>
+                            <Span x:Name="labelResultado" FontSize="15" FontAttributes="Bold"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label x:Name="labelObs"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="6" Grid.ColumnSpan="4" Margin="10">
+                <Image x:Name="imageTabela" Source="Tabela2_AR.png"/>
+            </StackLayout>
+
+            <local:PanContainer x:Name="panContainer" Grid.Row="6" Grid.ColumnSpan="4" IsClippedToBounds="True" Margin="15,10,10,0">
+                <AbsoluteLayout x:Name="regua" TranslationY="122" TranslationX="150">
+                    <BoxView HeightRequest="3" ScaleX="100"/>
+                    <BoxView HeightRequest="3" ScaleX="100"/>
+                    <BoxView HeightRequest="3" ScaleX="100"/>
+                    <BoxView WidthRequest="3" ScaleY="100"/>
+                    <BoxView WidthRequest="3" ScaleY="100"/>
+                    <BoxView WidthRequest="3" ScaleY="100"/>
+                </AbsoluteLayout>
+            </local:PanContainer>
+
+            <Label Text="* Consulte um profissional de segurança antes de realizar o serviço." FontSize="Micro" Grid.Column="2" Grid.Row="7" HorizontalOptions="Center"/>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

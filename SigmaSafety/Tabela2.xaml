@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaSafety.Tabela2"
+             xmlns:local="clr-namespace:SigmaSafety">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="NBR ISO 13857 - Tabela 4" TextColor="{AppThemeBinding Light=#03A64A, Dark=LightGray}" VerticalTextAlignment="Center"/>
+            <Image Source="icoSigma" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,20,0"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <local:PinchPanContainer >
+        <local:PinchPanContainer.Content>
+            <Image Source="Tab4.png" VerticalOptions="Start" HeightRequest="400" Margin="10,0,10,0"/>
+        </local:PinchPanContainer.Content>
+    </local:PinchPanContainer>
+
+</ContentPage>

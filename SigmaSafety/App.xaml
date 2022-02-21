@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SigmaSafety.App">
+    
+    <Application.Resources>
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light=White, Dark=#303030}"/>
+            <Setter Property="BarTextColor" Value="{AppThemeBinding Light=#03A64A, Dark=#03A64A}"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#03A64A, Dark=#03A64A}"/>
+            <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=White}"/>
+            <Setter Property="CornerRadius" Value="20"/>
+            <Setter Property="HeightRequest" Value="100"/>
+        </Style>
+        <Style TargetType="BoxView">
+            <Setter Property="Background" Value="#03A64A"/>
+            <Setter Property="Opacity" Value="0.3"/>
+        </Style>
+    </Application.Resources>
+</Application>
