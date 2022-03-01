@@ -4,4 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SigmaSafety.UWP">
 
+    <Application.Resources>
+        <Style TargetType="ToggleSwitch">
+            <Setter Property="OffContent" Value=" "/>
+            <Setter Property="OnContent" Value=" "/>
+        </Style>
+    </Application.Resources>
+    
 </Application>

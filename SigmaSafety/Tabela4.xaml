@@ -2,32 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SigmaSafety.Tabela4"
-             xmlns:local="clr-namespace:SigmaSafety">
+             xmlns:local="clr-namespace:SigmaSafety"
+             BackgroundColor="#303030" NavigationPage.HasNavigationBar="False">
 
-    <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Label Text="ISO 13855 Detecção de Aproximação" TextColor="{AppThemeBinding Light=#03A64A, Dark=LightGray}" VerticalTextAlignment="Center"/>
-            <Image Source="icoSigma.png" HorizontalOptions="EndAndExpand" HeightRequest="50" Margin="0,0,20,0"/>
-        </StackLayout>
-    </NavigationPage.TitleView>
-
-    <ScrollView HorizontalScrollBarVisibility="Default" VerticalScrollBarVisibility="Default">
-        <Grid HorizontalOptions="Center">
+    <ScrollView VerticalScrollBarVisibility="Default" HorizontalOptions="Center">
+        <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="340"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="320"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="400"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="420"/>
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
+
+            <StackLayout Orientation="Horizontal" Grid.Column="1">
+                <Label Text="ISO 13855 Detecção de Aproximação" VerticalTextAlignment="Center" Margin="85,0,0,0"/>
+                <Image Source="icoSigma.png" HorizontalOptions="EndAndExpand" HeightRequest="80"/>
+            </StackLayout>
 
             <Image Source="Tab13855.png" Grid.Row="1" Grid.Column="1"/>
 
@@ -37,23 +36,24 @@
             </StackLayout>
 
             <StackLayout Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
-                <Label Text="Tempo de parada em segundos ''T'':" VerticalTextAlignment="Center" FontSize="15"/>
-                <Entry Keyboard="Numeric" ReturnType="Done" x:Name="entryTempo" MaxLength="6" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="s" TextChanged="entryTempo_TextChanged"/>
+                <Label Text="Tempo de parada em segundos ''T'' : " VerticalTextAlignment="Center" FontSize="15" Margin="0,0,35,0"/>
+                <Entry Keyboard="Numeric" ReturnType="Done" x:Name="entryTempo" MaxLength="6" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="s" PlaceholderColor="#03A64A" TextChanged="entryTempo_TextChanged"/>
             </StackLayout>
 
             <StackLayout Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
-                <Label Text="Resolução da cortina de luz em mm ''D'':" VerticalTextAlignment="Center" FontSize="15"/>
-                <Entry Keyboard="Numeric" x:Name="entryResol" MaxLength="5" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="mm" TextChanged="TextChanged"/>
+                <Label Text="Resolução da cortina de luz em mm ''D'' :" VerticalTextAlignment="Center" FontSize="15" Margin="0,0,5,0"/>
+                <Entry Keyboard="Numeric" x:Name="entryResol" MaxLength="5" VerticalOptions="Start" WidthRequest="50" FontSize="15" Placeholder="mm" PlaceholderColor="#03A64A" TextChanged="TextChanged"/>
             </StackLayout>
 
-            <Button Grid.Row="5" Grid.Column="1" HorizontalOptions="Center" WidthRequest="200" HeightRequest="50" x:Name="btnCalcularDist" Margin="0,10,0,0" Text="Calcular" Clicked="btnCalcularDist_Clicked"/>
+            <Button Grid.Row="5" Grid.Column="1" HorizontalOptions="Center" WidthRequest="200" x:Name="btnCalcularDist" Margin="0,20,0,0" Text="Calcular" Clicked="btnCalcularDist_Clicked"/>
 
             <StackLayout Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Margin="0,20,0,0">
-                <Label Text="Resultado:" x:Name="labelTextoResultado" FontAttributes="Bold" TextColor="#03A64A" FontSize="15" IsVisible="false" MinimumWidthRequest="80"/>
-                <Label x:Name="labelResultado" Text="" FontSize="15" Margin="0,0,40,0"/>
+                <Label Text="Resultado:" x:Name="labelTextoResultado" FontAttributes="Bold" TextColor="#03A64A" FontSize="15" IsVisible="false"/>
+                <Label x:Name="labelResultado" Text="" FontSize="15"/>
             </StackLayout>
 
-            <Label Text="* Consulte um profissional de segurança antes de realizar o serviço." FontSize="Micro" Grid.Column="1" Grid.Row="7"/>
+            <Label x:Name="labelObs" Text="" IsVisible="false" FontSize="15" Grid.Column="1" Grid.Row="7"/>
+            <Label Text="* Consulte um profissional de segurança antes de realizar o serviço." FontSize="12" Grid.Column="1" Grid.Row="7" Margin="0,40,0,0"/>
 
         </Grid>
     </ScrollView>

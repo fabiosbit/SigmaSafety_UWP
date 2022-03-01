@@ -4,13 +4,18 @@
              x:Class="SigmaSafety.App">
     
     <Application.Resources>
-        <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light=White, Dark=#303030}"/>
-            <Setter Property="BarTextColor" Value="{AppThemeBinding Light=#03A64A, Dark=#03A64A}"/>
+        <Style TargetType="Switch">
+            <Setter Property="OnColor" Value="#03A64A"/>
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="TextColor" Value="WhiteSmoke"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="WhiteSmoke"/>
         </Style>
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light=#03A64A, Dark=#03A64A}"/>
-            <Setter Property="TextColor" Value="{AppThemeBinding Light=White, Dark=White}"/>
+            <Setter Property="BackgroundColor" Value="#03A64A"/>
+            <Setter Property="TextColor" Value="White"/>
             <Setter Property="CornerRadius" Value="20"/>
             <Setter Property="HeightRequest" Value="100"/>
         </Style>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -49,22 +50,28 @@ namespace SigmaSafety
                         }
 
                         s = (2000 * t) + c;
+                        labelObs.IsVisible = false;
 
                         //S não pode ser menor que 100mm usando K=2000 eq3
                         if (s < 100)
                         {
                             s = 100;
+                            labelObs.Text = "* A distância não pode ser menor que 100mm.";
+                            labelObs.IsVisible = true;
                         }
 
                         //Primeira particularidade da norma (6.2.3.1)
                         if (s >= 500)
                         {
                             s = (1600 * t) + c;
+                            labelObs.IsVisible = false;
 
                             //S não pode se menor que 500mm usando K=1600 eq4
                             if (s < 500)
                             {
                                 s = 500;
+                                labelObs.Text = "* A distância não pode ser menor que 500mm.";
+                                labelObs.IsVisible = true;
                             }
                         }
                     }
@@ -74,6 +81,7 @@ namespace SigmaSafety
                     if (d > 40)
                     {
                         s = (1600 * t) + 850;
+                        labelObs.IsVisible = false;
                     }
 
                     //Cálculo para feixe único C = 1200
@@ -82,6 +90,7 @@ namespace SigmaSafety
                         s = (1600 * t) + 1200;
                         labelResultado.Text = "Para Feixe Único: " + s + "mm";
                         labelTextoResultado.IsVisible = true;
+                        labelObs.IsVisible = false;
                     }
                     else
                     {
@@ -108,14 +117,23 @@ namespace SigmaSafety
             }
         }
 
-        private void entryTempo_TextChanged(object sender, TextChangedEventArgs e)
+        private void entryTempo_TextChanged(object sender, TextChangedEventArgs args)
         {
-            entryTempo.Text = e.NewTextValue?.Replace('.', ',');
+            //string pattern = @"[.]";
+            //string substitution = @",";
+            //string input = entryTempo.Text;
 
-            if (entryTempo.CursorPosition == 0 && e.NewTextValue != ",")
+            const string numRegex = @"^[0-9,]+$";
+            if (!string.IsNullOrWhiteSpace(args.NewTextValue))
             {
-                entryTempo.Text = e.NewTextValue + ",";
+                bool IsValid = Regex.IsMatch(args.NewTextValue, numRegex);
+                ((Entry)sender).Text = IsValid ? args.NewTextValue : args.NewTextValue.Remove(args.NewTextValue.Length - 1);
+
+
             }
+
+            //Regex regex = new Regex(pattern);
+            //entryTempo.Text = regex.Replace(input, substitution);
         }
 
         bool feixeUnico;

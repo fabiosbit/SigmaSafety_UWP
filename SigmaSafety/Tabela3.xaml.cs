@@ -834,7 +834,7 @@ namespace SigmaSafety
                             labelResultado.Text = "Hps(b) = " + Convert.ToString(tabelaRiscoBaixoHps[a, c]) + "mm";
                             labelTextoResultado.IsVisible = true;
                             labelObs.IsVisible = false;
-                            regua.TranslationX = largura * 30;
+                            regua.TranslationX = largura * 50;
                         }
 
                         if (hh == -1)
@@ -853,7 +853,7 @@ namespace SigmaSafety
                                 labelResultado.Text = "Hh(a) = " + Convert.ToString(tabelaRiscoBaixoHh[b, c]) + "mm";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = false;
-                                regua.TranslationY = altura * 30;
+                                regua.TranslationY = altura * 50;
                             }
                         }
                     }
@@ -1650,7 +1650,7 @@ namespace SigmaSafety
                             labelResultado.Text = "Hps(b) = " + tabelaRiscoAltoHps[a, c] + "mm";
                             labelTextoResultado.IsVisible = true;
                             labelObs.IsVisible = false;
-                            regua.TranslationX = largura * 30;
+                            regua.TranslationX = largura * 50;
 
                         }
 
@@ -1662,13 +1662,15 @@ namespace SigmaSafety
                                 labelObs.Text = "Estruturas de proteção (Hps) menores que 1000mm não restringem suficientemente o movimento do corpo.";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = true;
+                                regua.TranslationX = largura / 2;
+                                regua.TranslationY = altura / 2;
                             }
                             else
                             {
                                 labelResultado.Text = "Hh(a) = " + tabelaRiscoAltoHh[b, c] + "mm";
                                 labelTextoResultado.IsVisible = true;
                                 labelObs.IsVisible = false;
-                                regua.TranslationY = altura * 30;
+                                regua.TranslationY = altura * 50;
                             }
                         }
                     }

@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SigmaSafety.Sobre">
+             x:Class="SigmaSafety.Sobre"
+             BackgroundColor="#303030" NavigationPage.HasNavigationBar="False">
 
     <NavigationPage.TitleView>
-        <Label Text="Sigma Automação Industrial" TextColor="{AppThemeBinding Light=#03A64A, Dark=LightGray}" HorizontalTextAlignment="Start"/>
+        <Label Text="Sigma Automação Industrial" TextColor="LightGray" HorizontalTextAlignment="Start"/>
     </NavigationPage.TitleView>
 
     <ScrollView HorizontalScrollBarVisibility="Default" VerticalScrollBarVisibility="Default">
         <Grid HorizontalOptions="Center">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="320"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
-            <StackLayout Orientation="Horizontal" Margin="20,20,20,0">
-                <Image Source="LogoServs.png" HeightRequest="120"/>
-                <Image Source="RAPartner.png" HeightRequest="80"/>
+            <StackLayout Orientation="Horizontal" Margin="20,20,0,0">
+                <Image Source="LogoServs.png" HeightRequest="120" Margin="0,0,20,0"/>
+                <Image Source="RAPartner.png" HeightRequest="90"/>
             </StackLayout>
 
             <StackLayout Grid.Row="1" Orientation="Vertical" Padding="30,0,30,0" Spacing="10">
@@ -34,7 +34,7 @@
                 <Label Text="Rua José de Alencar, 475E - Chapecó - SC"/>
             </StackLayout>
 
-            <StackLayout Grid.Row="2" HorizontalOptions="Start" Orientation="Horizontal" Margin="10,0,0,0">
+            <StackLayout Grid.Row="2" HorizontalOptions="Start" Orientation="Horizontal" Margin="20,0,0,0">
                 <Button BackgroundColor="#00ff" ImageSource="IcoWhatsapp.png" Clicked="btnWhats"/>
                 <Button BackgroundColor="#00ff" ImageSource="IcoWWW.png" Clicked="btnWWW"/>
             </StackLayout>
