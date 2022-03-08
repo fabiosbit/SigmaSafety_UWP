@@ -8,7 +8,7 @@
 
   <Identity
     Name="8F7ACA4E-FB21-40B0-A1BD-C4D5AD48D00F"
-    Publisher="CN=068875AC-B107-47A6-967F-894DBFFD733A"
+    Publisher="CN=Sigma"
     Version="1.0.0.0" />
 
   <mp:PhoneIdentity PhoneProductId="ec0cc741-fd3e-485c-81be-68815c480690" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>

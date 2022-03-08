@@ -22,19 +22,34 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CalculadoraBarreira.xaml.cs">
+      <DependentUpon>CalculadoraBarreira.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="CalculadoraFeixe.xaml.cs">
+      <DependentUpon>CalculadoraFeixe.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Tabela4.xaml.cs">
+      <DependentUpon>Tabela4.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Tabela3.xaml.cs">
+      <DependentUpon>Tabela3.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Sobre.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Tabela1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Tabela2.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Tabela3.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Tabela4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CalculadoraBarreira.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="CalculadoraFeixe.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

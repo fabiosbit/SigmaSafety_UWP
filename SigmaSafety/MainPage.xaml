@@ -19,10 +19,10 @@
 
         <Image Source="LogoSigma.png" HeightRequest="130" Grid.ColumnSpan="2" Margin="0,0,0,10" HorizontalOptions="Center"/>
 
-        <Button x:Name="btnTab1" Text="NBR ISO 13857 &#x0a;      Tabela 3" Grid.Row="1" Grid.Column="0" Margin="0,10,10,10" Clicked="btnTab1_Clicked"/>
-        <Button x:Name="btnTab2" Text="NBR ISO 13857 &#x0a;      Tabela 4" Grid.Row="1" Grid.Column="1" Margin="10,10,0,10" Clicked="btnTab2_Clicked"/>
-        <Button x:Name="btnTab3" Text=" Calculadora &#x0a;Norma 13857" Grid.Row="2" Grid.Column="0" Margin="0,10,10,10" Clicked="btnTab3_Clicked"/>
-        <Button x:Name="btnTab4" Text=" Calculadora &#x0a;Norma 13855" Grid.Row="2" Grid.Column="1" Margin="10,10,0,10" Clicked="btnTab4_Clicked"/>
+        <Button x:Name="btnTab3" Text="NBR ISO 13857 &#x0a;      Tabela 3" Grid.Row="1" Grid.Column="0" Margin="0,10,10,10" Clicked="btnTab3_Clicked"/>
+        <Button x:Name="btnTab4" Text="NBR ISO 13857 &#x0a;      Tabela 4" Grid.Row="1" Grid.Column="1" Margin="10,10,0,10" Clicked="btnTab4_Clicked"/>
+        <Button x:Name="btnCalcBarreira" Text=" Calculadora &#x0a;Norma 13857" Grid.Row="2" Grid.Column="0" Margin="0,10,10,10" Clicked="btnCalcBarreira_Clicked"/>
+        <Button x:Name="btnCalcFeixe" Text=" Calculadora &#x0a;Norma 13855" Grid.Row="2" Grid.Column="1" Margin="10,10,0,10" Clicked="btnCalcFeixe_Clicked"/>
         <Button x:Name="btnSObre" Text="Sobre a Sigma" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Margin="90,20,90,0" Clicked="btnSobre_Clicked"/>
 
     </Grid>
